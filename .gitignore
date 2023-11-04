@@ -4,8 +4,9 @@
 /uploads
 /node_modules
 yarn-error.log
-
+.easyRedis.redis
 .idea
+.vscode/settings.json
 
 coverage
 
