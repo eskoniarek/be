@@ -1,3 +1,4 @@
 {
-    "easyRedis.address": "redis://default:pass@127.0.0.1:6379/0"
+    "easyRedis.address": "redis://default:pass@127.0.0.1:6379/0",
+    "typescript.tsserver.nodePath": " /opt/homebrew/Cellar/node/21.1.0"
 }

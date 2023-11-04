@@ -79,12 +79,6 @@ const plugins = [
       from: process.env.SENDGRID_FROM,
       order_placed_template: 
         process.env.SENDGRID_ORDER_PLACED_ID,
-      localization: {
-        "en-EN": { // locale key
-          order_placed_template:
-            process.env.SENDGRID_ORDER_PLACED_ID_LOCALIZED,
-        },
-      },
     },
   },
 ];
@@ -94,8 +88,15 @@ const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: process.env.REDIS_URL,
+      redisUrl: process.env.EVENTS_REDIS_URL,
 
+    }
+  },
+  cacheService: {
+    resolve: "@medusajs/cache-redis",
+    options: {
+      redisUrl: process.env.CACHE_REDIS_URL,
+      ttl: 30,
     }
   },
 };
@@ -107,7 +108,7 @@ const projectConfig = {
   store_cors: STORE_CORS,
   database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
-  redis_url: REDIS_URL
+  redis_url: REDIS_URL,
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */

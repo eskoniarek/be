@@ -129,7 +129,7 @@ import {
   
     async create(
       data: Pick<
-        ProductMedia, "name" | "file_key" | "variant_id" | "type" | "mime_type"
+        ProductMedia, "name" | "file_key" | "variant_id" | "type"
       >
     ): Promise<ProductMedia> {
       return this.atomicPhase_(async (manager) => {

@@ -49,7 +49,6 @@ import type {
       file_key,
       type,
       name,
-      mime_type,
     })
   
     res.json({
